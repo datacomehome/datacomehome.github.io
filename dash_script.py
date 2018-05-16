@@ -251,6 +251,7 @@ layout = dict(
 
 interaction_layout = {
   'yaxis': {
+    'dtick': 1,
     'showgrid': False,
     'zeroline': False,
     'showticklabels': False,
@@ -396,12 +397,15 @@ def update_figure_2(player):
         filtered_data = [interaction_data[i] for i,p in enumerate(interaction_names) if p == player][0]
         # Set up layout
         new_layout = {
-          'barmode': 'relative',
-          # 'paper_bgcolor':'rgb(240, 240, 240)',
-          # 'plot_bgcolor':'rgb(256, 256, 256)',
-          'title': '<b>Ranked Player Interactions for %s</b>' % player,
-          'showlegend': False,
-          'margin':dict(l=120),
+            'yaxis':{
+                'dtick': 1,
+            },
+            'barmode': 'relative',
+            # 'paper_bgcolor':'rgb(240, 240, 240)',
+            # 'plot_bgcolor':'rgb(256, 256, 256)',
+            'title': '<b>Ranked Player Interactions for %s</b>' % player,
+            'showlegend': False,
+            'margin':dict(l=120),
         }
 
         # Update graph
